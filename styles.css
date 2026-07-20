@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f4efe6;
+  --text: #221d18;
+  --card-bg: #fffdf9;
+  --read: #1b6e31;
+  --unread: #8d2a2a;
+  --addBtn: #6d4c41;
+  --addBtnHvr: #8d6e63;
+  --bigTxt: 2.5rem;
+  --b-rad: 13px;
+  --smooth-trans: all 0.2s ease-in-out;
+  /*  */
+  --testclr: red;
+}
+
+body {
+  font-family:
+    Cormorant Garamond,
+    Inter,
+    sans-serif;
+  /* font-weight: 400; */
+  /* font-size: 2.5rem; */
+  /* background-color: var(--bg); */
+  /* or */
+  background: var(--bg); /* same thing */
+  padding: 40px 80px; /* top right bottom left or topbottom rightleft */
+  min-height: 100dvh;
+  color: var(--text);
+}
+
+.logo h3 {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+header {
+  /* position: relative; */
+  /*  */
+  font-size: var(--bigTxt);
+  display: flex;
+  justify-content: space-between;
+}
+
+.addBtn {
+  align-self: center;
+  /* position: absolute;
+    min-height: 20%;
+    top: 30%;
+    right: 25px; */
+  padding: 15px 26px;
+  border-radius: var(--b-rad);
+  border-color: var(--bg);
+  background: var(--addBtn);
+  color: var(--bg);
+  font-size: 1.1rem;
+  /* transition: var(--smooth-trans); */
+  /* 💠💠 */
+  border: none;
+}
+
+.addBtn:hover {
+  transition: 0.3s;
+
+  background: var(--addBtnHvr);
+  cursor: pointer;
+}
+
+.cardGrid {
+  margin-top: 40px;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(1fr,50px)); */
+  /* grid-template-columns: repeat(3, 1fr); not responsive */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.bookCard {
+  /* display: flex;
+    flex-direction: column; */
+  align-items: start;
+  background: var(--card-bg);
+  padding: 10px;
+  font-size: 1.6rem;
+  border-radius: var(--b-rad);
+  /* transition:var(--smooth-trans); */
+}
+
+.bookCard:hover {
+  /* translateY: -4px; DNW*/
+  transform: translateY(-3px);
+}
+
+.bookCard p {
+  font-size: 1.2rem;
+}
+
+.bookCard > * {
+  margin: 15px;
+  margin-bottom: 0px;
+}
+
+.cardBtns {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 10px;
+}
+
+.cardBtns button {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+}
+
+/* .dialogContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.inputgrp {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: start; */
+  /* width: 100%; */
+}
+
+.inputgrp2 {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: start; */
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.formBtns {
+  display: flex;
+  gap: 30px;
+}
+
+/* 💠💠 */
+
+#newBookDialog {
+  /* Letting the browser handle display: none / block and centering */
+  margin: auto;
+  border: none;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--b-rad);
+  max-width: 400px;
+  width: 95%; /* Responsive width */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Premium shadow */
+}
+#newBookDialog::backdrop {
+  background: rgba(34, 29, 24, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* -- */
+#newBookDialog form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: start; */
+  align-items: stretch;
+
+  /* PS: */
+  /* background: var(--card-bg);
+  padding: 10px;
+  font-size: 1.6rem;
+  border-radius: var(--b-rad);
+  height: 60dvh;
+  width: 20dvw; */
+}
